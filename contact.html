@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="main-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | تواصل معنا</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { --brand-burgundy: #4a0404; --brand-cream: #f5d5b5; }
+        .text-brand { color: var(--brand-burgundy); }
+        .bg-brand { background-color: var(--brand-burgundy); }
+        .border-brand { border-color: var(--brand-burgundy); }
+    </style>
+</head>
+<body class="bg-stone-50">
+    <nav class="p-4 bg-white border-b flex justify-between items-center shadow-sm">
+        <a href="index.html">
+            <img src="logo.png" alt="Bedoun Logo" class="h-12 w-auto">
+        </a>
+        <button onclick="toggleLanguage(this)" class="px-4 py-1 border-2 border-brand text-brand rounded-full font-bold">English</button>
+    </nav>
+
+    <div class="container mx-auto px-6 py-20 text-center space-y-8">
+        <h1 class="text-4xl font-black text-brand" data-en="Get in Touch" data-ar="تواصل معنا">تواصل معنا</h1>
+        <p class="text-gray-600 max-w-md mx-auto" data-en="Have questions? Reach us on our social channels." data-ar="لديك استفسار؟ تواصل معنا عبر قنواتنا الاجتماعية.">لديك استفسار؟ تواصل معنا عبر قنواتنا الاجتماعية.</p>
+        
+        <div class="grid md:grid-cols-3 gap-6 pt-10">
+            <a href="https://api.whatsapp.com/send?phone=9660535825671" class="p-8 bg-white rounded-2xl shadow hover:scale-105 transition border hover:border-brand/20">
+                <div class="text-brand text-xl font-bold">WhatsApp</div>
+            </a>
+            <a href="https://www.instagram.com/bedoun.sa" class="p-8 bg-white rounded-2xl shadow hover:scale-105 transition border hover:border-brand/20">
+                <div class="text-brand text-xl font-bold">Instagram</div>
+            </a>
+            <a href="https://www.tiktok.com/@bedoun.sa" class="p-8 bg-white rounded-2xl shadow hover:scale-105 transition border hover:border-brand/20">
+                <div class="text-brand text-xl font-bold">TikTok</div>
+            </a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
