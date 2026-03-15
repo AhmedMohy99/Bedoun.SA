@@ -6,46 +6,39 @@
     <title>Order | متاح طلب قهوتكم المفضله</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root { 
-            --brand-burgundy: #4a0404; 
-            --brand-cream: #f5d5b5; 
-        }
+        :root { --brand-burgundy: #4a0404; }
         .text-brand { color: var(--brand-burgundy); }
         .bg-brand { background-color: var(--brand-burgundy); }
-        .border-brand { border-color: var(--brand-burgundy); }
-        .text-cream { color: var(--brand-cream); }
     </style>
 </head>
-<body class="bg-stone-50 text-gray-900">
+<body class="bg-[#faf9f6] text-[#1a1a1a]">
     <nav class="p-4 bg-white border-b flex justify-between items-center shadow-sm">
-        <a href="index.html">
-            <img src="logo.png" alt="Bedoun Logo" class="h-12 w-auto">
-        </a>
-        <button onclick="toggleLanguage(this)" class="px-4 py-1 border-2 border-brand text-brand rounded-full font-bold">English</button>
+        <a href="index.html"><img src="logo.png.jpeg" alt="Logo" class="h-14 w-auto"></a>
+        <button onclick="toggleLanguage(this)" class="px-5 py-2 border-2 border-brand text-brand rounded-full font-bold">English</button>
     </nav>
 
-    <div class="container mx-auto px-6 py-12 max-w-lg">
-        <h2 class="text-3xl font-bold mb-8 text-center text-brand" data-en="Complete Your Order" data-ar="متاح طلب قهوتكم المفضله">متاح طلب قهوتكم المفضله</h2>
-        
-        <div class="bg-white p-8 rounded-2xl shadow-xl space-y-6 border border-gray-100">
-            <div class="flex items-center gap-4 pb-6 border-b">
-                <img src="product.png" alt="Bedoun Arabic Coffee" class="w-20 h-20 rounded-lg border">
+    <div class="container mx-auto px-6 py-12 max-w-xl">
+        <div class="bg-white p-10 rounded-[2rem] shadow-2xl border border-stone-100">
+            <h2 class="text-4xl font-black mb-8 text-center text-brand" data-en="Your Order" data-ar="تفاصيل الطلب">تفاصيل الطلب</h2>
+            
+            <div class="flex items-center gap-6 p-6 bg-stone-50 rounded-2xl mb-10">
+                <img src="product.png.jpg" alt="Coffee" class="w-28 h-28 rounded-xl shadow-lg object-cover">
                 <div>
-                    <h3 class="font-bold text-lg">Bedoun Arabic Coffee</h3>
-                    <p class="text-gray-500" data-en="Traditional Blend" data-ar="الخلطة التقليدية">الخلطة التقليدية</p>
+                    <h3 class="font-bold text-xl uppercase tracking-tighter">Arabic Bedoun Coffee</h3>
+                    <p class="text-brand font-black text-2xl mt-1">99 SAR</p>
                 </div>
             </div>
 
-            <form id="orderForm" class="space-y-4">
+            <form id="orderForm" class="space-y-6">
                 <div>
-                    <label class="block text-sm font-bold mb-2" data-en="Full Name" data-ar="الاسم الكامل">الاسم الكامل</label>
-                    <input type="text" id="name" required class="w-full p-3 rounded-lg border-2 border-gray-200 focus:border-brand outline-none transition">
+                    <label class="block text-xs font-black uppercase tracking-widest mb-2 opacity-50" data-en="Name" data-ar="الاسم">الاسم</label>
+                    <input type="text" id="name" required class="w-full p-4 rounded-xl border-2 border-stone-100 focus:border-brand outline-none transition-all">
                 </div>
                 <div>
-                    <label class="block text-sm font-bold mb-2" data-en="City / Delivery Address" data-ar="المدينة / عنوان التوصيل">المدينة / عنوان التوصيل</label>
-                    <input type="text" id="address" required class="w-full p-3 rounded-lg border-2 border-gray-200 focus:border-brand outline-none transition">
+                    <label class="block text-xs font-black uppercase tracking-widest mb-2 opacity-50" data-en="Address" data-ar="العنوان">العنوان</label>
+                    <input type="text" id="address" required class="w-full p-4 rounded-xl border-2 border-stone-100 focus:border-brand outline-none transition-all">
                 </div>
-                <button type="submit" class="w-full bg-brand text-white py-4 rounded-xl font-bold text-lg hover:shadow-lg transition uppercase tracking-widest" data-en="Confirm Order via WhatsApp" data-ar="تأكيد الطلب عبر واتساب">تأكيد الطلب عبر واتساب</button>
+                <button type="submit" class="w-full bg-brand text-white py-5 rounded-2xl font-black text-lg shadow-xl shadow-brand/20 hover:opacity-95 transition-all uppercase tracking-widest" data-en="Confirm via WhatsApp" data-ar="تأكيد عبر واتساب">تأكيد عبر واتساب</button>
             </form>
         </div>
     </div>
@@ -56,8 +49,7 @@
             e.preventDefault();
             const name = document.getElementById('name').value;
             const addr = document.getElementById('address').value;
-            // The English translation of the prompt you provided, structured as a neat message.
-            const msg = `Hello Bedoun Coffee,\nI want to order your Signature Arabic Coffee (قهوة البدوية).\n\nName: ${name}\nDelivery Address: ${addr}`;
+            const msg = `أهلاً قهوة البدوية، أريد طلب القهوة الخاصة بكم:\n\nالاسم: ${name}\nالعنوان: ${addr}`;
             window.open(`https://api.whatsapp.com/send?phone=9660535825671&text=${encodeURIComponent(msg)}`);
         });
     </script>
