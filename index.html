@@ -3,74 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bedoun Coffee | بدون كوفي</title>
+    <title>قهوة البدوية | Bedoun Coffee</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root {
-            --brand-brown: #956a4b;
+        :root { 
+            --brand-burgundy: #4a0404; /* Matches logo background */
+            --brand-cream: #f5d5b5;    /* Matches logo text/design */
         }
-        .bg-brand { background-color: var(--brand-brown); }
-        .text-brand { color: var(--brand-brown); }
-        .border-brand { border-color: var(--brand-brown); }
+        .bg-brand { background-color: var(--brand-burgundy); }
+        .text-brand { color: var(--brand-burgundy); }
+        .border-brand { border-color: var(--brand-burgundy); }
+        .text-cream { color: var(--brand-cream); }
     </style>
 </head>
-<body class="bg-stone-50 text-gray-800 font-sans">
+<body class="bg-stone-50 text-gray-900 font-sans">
 
-    <nav class="p-6 flex justify-between items-center bg-white shadow-sm">
-        <div class="font-bold text-2xl text-brand">BEDOUN</div>
-        <div class="space-x-6 space-x-reverse hidden md:flex">
-            <a href="index.html" class="hover:text-brand" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
-            <a href="order.html" class="hover:text-brand" data-en="Order" data-ar="الطلب">الطلب</a>
-            <a href="contact.html" class="hover:text-brand" data-en="Contact" data-ar="تواصل معنا">تواصل معنا</a>
+    <nav class="sticky top-0 z-50 p-4 flex justify-between items-center bg-white shadow-sm border-b">
+        <a href="index.html">
+            <img src="logo.png" alt="Bedoun Logo" class="h-14 w-auto">
+        </a>
+        <div class="space-x-8 space-x-reverse hidden md:flex font-medium">
+            <a href="index.html" class="text-brand">الرئيسية</a>
+            <a href="order.html" class="hover:text-brand transition">الطلب</a>
+            <a href="contact.html" class="hover:text-brand transition">تواصل معنا</a>
         </div>
-        <button onclick="toggleLanguage()" class="border border-brand px-4 py-1 rounded-full text-brand hover:bg-brand hover:text-white transition">
-            English
-        </button>
+        <button onclick="toggleLanguage(this)" class="px-5 py-2 border-2 border-brand rounded-full text-brand font-bold hover:bg-brand hover:text-white transition">English</button>
     </nav>
 
-    <section class="container mx-auto px-6 py-16 flex flex-col md:flex-row items-center">
-        <div class="md:w-1/2 space-y-6">
-            <h1 class="text-5xl font-bold leading-tight" data-en="Premium Coffee for Modern Minds" data-ar="قهوة مختصة للعقول المبدعة">قهوة مختصة للعقول المبدعة</h1>
-            <p class="text-lg text-gray-600" data-en="Experience the rich, authentic taste of Bedoun. Crafted with passion." data-ar="استمتع بطعم بدون الأصيل والغني. صُنعت بكل شغف.">استمتع بطعم بدون الأصيل والغني. صُنعت بكل شغف.</p>
-            <a href="order.html" class="inline-block bg-brand text-white px-8 py-3 rounded-lg text-lg font-semibold hover:opacity-90 transition" data-en="Order Now" data-ar="اطلب الآن">اطلب الآن</a>
-        </div>
-        <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center">
-            <div class="w-80 h-96 bg-stone-200 rounded-2xl flex items-center justify-center border-4 border-brand">
-                <span class="text-gray-400">Product Image</span>
+    <header class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2 space-y-8">
+            <h1 class="text-6xl font-black leading-none" data-en="Authentic Arabic Coffee" data-ar="قهوة البدوية الأصيلة">قهوة البدوية الأصيلة</h1>
+            <p class="text-xl text-gray-600 leading-relaxed" data-en="Discover the rich heritage in every cup. Meticulously crafted for a taste that moves you." data-ar="اكتشف التراث الغني في كل كوب. صُنعت بعناية فائقة لمذاق يحرك مشاعرك.">اكتشف التراث الغني في كل كوب. صُنعت بعناية فائقة لمذاق يحرك مشاعرك.</p>
+            <div class="flex gap-4">
+                <a href="order.html" class="bg-brand text-white px-10 py-4 rounded-xl text-lg font-bold shadow-lg hover:opacity-90 transition" data-en="Order Now" data-ar="متاح طلب قهوتكم المفضله">متاح طلب قهوتكم المفضله</a>
             </div>
         </div>
-    </section>
+        <div class="md:w-1/2 flex justify-center">
+            <img src="product.png" alt="Bedoun Arabic Coffee Bag" class="w-full max-w-sm rounded-3xl shadow-2xl border-4 border-brand">
+        </div>
+    </header>
 
-    <footer class="bg-white border-t py-10 mt-20">
-        <div class="flex justify-center space-x-8 space-x-reverse">
-            <a href="https://www.instagram.com/bedoun.sa" class="text-brand font-medium">Instagram</a>
-            <a href="https://www.tiktok.com/@bedoun.sa" class="text-brand font-medium">TikTok</a>
-            <a href="https://api.whatsapp.com/send?phone=9660535825671" class="text-brand font-medium">WhatsApp</a>
+    <footer class="bg-brand text-cream py-12 mt-20">
+        <div class="flex flex-col items-center gap-6">
+            <div class="flex gap-8">
+                <a href="https://www.instagram.com/bedoun.sa" class="hover:underline text-sm font-bold uppercase">Instagram</a>
+                <a href="https://www.tiktok.com/@bedoun.sa" class="hover:underline text-sm font-bold uppercase">TikTok</a>
+                <a href="https://api.whatsapp.com/send?phone=9660535825671" class="hover:underline text-sm font-bold uppercase">WhatsApp</a>
+            </div>
+            <p class="text-xs">© 2026 قهوة البدوية. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
-    <script>
-        function toggleLanguage() {
-            const html = document.getElementById('main-html');
-            const btn = event.target;
-            const isArabic = html.getAttribute('dir') === 'rtl';
-
-            if (isArabic) {
-                html.setAttribute('dir', 'ltr');
-                html.setAttribute('lang', 'en');
-                btn.innerText = 'العربية';
-            } else {
-                html.setAttribute('dir', 'rtl');
-                html.setAttribute('lang', 'ar');
-                btn.innerText = 'English';
-            }
-
-            document.querySelectorAll('[data-en]').forEach(el => {
-                const textEn = el.getAttribute('data-en');
-                const textAr = el.getAttribute('data-ar');
-                el.innerText = isArabic ? textEn : textAr;
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
